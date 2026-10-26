@@ -1,9 +1,10 @@
 {
   "release_date": "2026-10-26",
+  "release_version": "2026-10-26.2",
   "release_csv": "data/all_route_half_life_release.csv",
-  "csv_sha256": "8b2bc282bcc623af3b14e71c642cfd0189df49552634f3a34167c827c6b475f9",
+  "csv_sha256": "89584232b5fbb52bf08a14c3c8fecabc818646b33e5fc7600a8447778ae21a90",
   "rows": 19952,
-  "columns": 13,
+  "columns": 14,
   "distinct_pmcids": 3270,
   "unique_row_ids": true,
   "route_counts": {
@@ -29,13 +30,29 @@
     "typical_value": 16,
     "unspecified": 317
   },
+  "molecule_class_counts": {
+    "small_molecule": 14904,
+    "antibody": 2564,
+    "protein": 854,
+    "peptide": 620,
+    "other": 401,
+    "antibody_drug_conjugate": 175,
+    "enzyme": 172,
+    "oligonucleotide": 157,
+    "oligosaccharide": 105
+  },
   "previous_release": {
-    "release_date": "2026-10-25",
-    "csv_sha256": "90940ad9edb449807dfca4a860cbe4eb08a42acf88afcc0e1a5ec02456970701",
-    "rows": 19945,
-    "rows_added": 24,
-    "rows_removed": 17,
-    "retained_rows_modified": 0
+    "release_version": "2026-10-26.1",
+    "release_date": "2026-10-26",
+    "csv_sha256": "8b2bc282bcc623af3b14e71c642cfd0189df49552634f3a34167c827c6b475f9",
+    "rows": 19952,
+    "columns": 13,
+    "rows_added": 0,
+    "rows_removed": 0,
+    "retained_field_values_modified": 0,
+    "columns_added": [
+      "molecule_class"
+    ]
   },
   "remaining_range_endpoint_rows": 0,
   "hugging_face_dataset_card_parse": "passed",

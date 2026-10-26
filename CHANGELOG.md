@@ -1,6 +1,14 @@
 # Changelog
 
-## 2026-10-26
+## 2026-10-26.2
+
+- Added a fully populated `molecule_class` column with nine controlled values.
+- Preserved all 19,952 row IDs and all pre-existing field values.
+- Documented that molecule class describes the measured analyte or presentation, so a normalized parent molecule can have context-dependent classes.
+- Increased the schema from 13 to 14 columns.
+- SHA-256: `89584232b5fbb52bf08a14c3c8fecabc818646b33e5fc7600a8447778ae21a90`.
+
+## 2026-10-26.1
 
 - Published 19,952 records from 3,270 PMC articles.
 - Added 24 source-supported records relative to the 2026-10-25 release.

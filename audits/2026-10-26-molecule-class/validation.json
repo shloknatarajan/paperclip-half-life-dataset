@@ -1,0 +1,33 @@
+{
+  "release_version": "2026-10-26.2",
+  "base_release_version": "2026-10-26.1",
+  "base_csv_sha256": "8b2bc282bcc623af3b14e71c642cfd0189df49552634f3a34167c827c6b475f9",
+  "release_csv_sha256": "89584232b5fbb52bf08a14c3c8fecabc818646b33e5fc7600a8447778ae21a90",
+  "base_rows": 19952,
+  "release_rows": 19952,
+  "base_columns": 13,
+  "release_columns": 14,
+  "columns_added": [
+    "molecule_class"
+  ],
+  "row_ids_added": 0,
+  "row_ids_removed": 0,
+  "duplicate_row_ids": 0,
+  "existing_field_values_modified": 0,
+  "blank_molecule_class": 0,
+  "molecule_class_counts": {
+    "small_molecule": 14904,
+    "antibody": 2564,
+    "protein": 854,
+    "peptide": 620,
+    "other": 401,
+    "antibody_drug_conjugate": 175,
+    "enzyme": 172,
+    "oligonucleotide": 157,
+    "oligosaccharide": 105
+  },
+  "normalized_names_with_multiple_classes": 1,
+  "context_dependent_normalized_names": [
+    "Camptothecin"
+  ]
+}

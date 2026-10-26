@@ -30,16 +30,18 @@ Each row represents a paper-, analyte-, regimen-, cohort-, occasion-, and statis
 | --- | ---: |
 | Records | 19,952 |
 | Source papers | 3,270 |
-| Columns | 13 |
+| Columns | 14 |
 | Oral records | 10,002 |
 | Intravenous records | 7,705 |
 | Subcutaneous records | 820 |
 | Other-route records | 1,425 |
 | Records with paired SMILES and InChIKey | 12,434 |
 | Records with a normalized drug name | 16,874 |
+| Records with a molecule class | 19,952 |
 
+Release version: 2026-10-26.2  
 Release date: 2026-10-26  
-Release SHA-256: `8b2bc282bcc623af3b14e71c642cfd0189df49552634f3a34167c827c6b475f9`
+Release SHA-256: `89584232b5fbb52bf08a14c3c8fecabc818646b33e5fc7600a8447778ae21a90`
 
 ## Data format
 
@@ -67,6 +69,7 @@ print(records)
 | `pmcid` | string | PubMed Central identifier for the source article. |
 | `drug_name` | string | Analyte or drug label used for the extracted record. This may include metabolites, total antibody, radioactivity, transgene, or other measured entities. |
 | `normalized_drug_name` | string, nullable | Normalized analyte or compound name when an identity could be resolved. |
+| `molecule_class` | enum | Single controlled class for the measured analyte or presentation. See the vocabulary and interpretation notes below. |
 | `smiles` | string, nullable | Validated SMILES representation when an appropriate structure could be assigned. |
 | `inchikey` | string, nullable | InChIKey corresponding to the assigned SMILES. SMILES and InChIKey are either both populated or both blank. |
 | `administration_route` | enum | Normalized route: `oral`, `iv`, `subcutaneous`, or `other`. |
@@ -78,6 +81,24 @@ print(records)
 | `notes` | string | Source interpretation, unit conversion, terminal-phase qualification, and provenance caveats. |
 
 Blank strings represent unavailable values. They should not be interpreted as zero or as evidence that a compound lacks a structure.
+
+## Molecule-class vocabulary
+
+Every record has one `molecule_class` value:
+
+| Value | Records | Meaning |
+| --- | ---: | --- |
+| `small_molecule` | 14,904 | Discrete small-molecule analyte. |
+| `antibody` | 2,564 | Antibody or antibody-like therapeutic without a classified drug conjugate. |
+| `protein` | 854 | Protein therapeutic or protein analyte not classified more specifically as an antibody or enzyme. |
+| `peptide` | 620 | Peptide or peptide-like analyte. |
+| `other` | 401 | Analyte or presentation not represented by the other controlled classes, including some total-radioactivity, elemental, gas, cellular, polymer-bound, or formulation-level measurements. |
+| `antibody_drug_conjugate` | 175 | Antibody–drug conjugate or conjugated-antibody analyte. |
+| `enzyme` | 172 | Enzyme therapeutic or measured enzyme activity. |
+| `oligonucleotide` | 157 | DNA-, RNA-, aptamer-, or related oligonucleotide analyte. |
+| `oligosaccharide` | 105 | Oligosaccharide, cyclodextrin, or related carbohydrate analyte. |
+
+`molecule_class` describes the measured analyte or presentation in that record, not necessarily the normalized parent structure alone. Consequently, records with the same `normalized_drug_name` or InChIKey can legitimately have different classes—for example, a free small molecule versus its polymer-conjugated or carrier-bound measurement.
 
 ## Summary-statistic vocabulary
 
@@ -108,7 +129,8 @@ The release was produced through an iterative literature-curation and validation
 4. Source-facing values, dispersion measures, intervals, and contextual qualifications were retained in text fields.
 5. Duplicate candidates were adjudicated using analyte, dose, regimen, cohort, PK occasion, statistic, and source-value context. Equal numeric values alone were not treated as duplicates.
 6. Chemical identifiers were checked as paired SMILES/InChIKey values, and normalized-name casing was consolidated deterministically.
-7. Automated release validation checked row identifiers, PMCIDs, required fields, half-life positivity, identifier pairing and formatting, controlled vocabulary values, and duplicate keys.
+7. Each record was assigned one controlled `molecule_class` describing the measured analyte or presentation.
+8. Automated release validation checked row identifiers, PMCIDs, required fields, half-life positivity, identifier pairing and formatting, controlled vocabulary values, and duplicate keys.
 
 The duplicate-review workflow included LLM-assisted comparison of 218 candidate pairs across 213 high-confidence groups. It removed 215 redundant rows and retained comparisons representing distinct doses or PK occasions. LLM assistance was used as a curation aid rather than as a substitute for the source-derived evidence recorded in each row.
 
@@ -120,6 +142,7 @@ The duplicate-review workflow included LLM-assisted comparison of 218 candidate 
 - 3,078 records lack a normalized drug name.
 - 7,518 records lack SMILES and InChIKey. Structures are commonly unavailable or inappropriate for mixtures, biologics, cells, polymers, radioactivity measurements, incompletely specified analytes, or unresolved identities.
 - 317 records have an unspecified summary statistic.
+- Molecule classes are single-label, coarse categories and do not encode every relevant modality, formulation, conjugation state, or biochemical role. Interpret them together with `drug_name`, `drug_information`, and `notes`.
 - The notes explicitly flag 53 records curated from abstracts without full-text review and two records for which full text was unavailable. Absence of a source-scope statement should not be interpreted as a formal certification of full-text review.
 - Text fields are curated summaries and may retain study-specific terminology. Users should consult the cited paper before drawing scientific or clinical conclusions.
 - Deduplication substantially reduces redundant extraction records but cannot guarantee that no conceptually overlapping observations remain under every possible interpretation.
@@ -160,11 +183,11 @@ Until a DOI or archival citation is assigned, cite the versioned Hugging Face re
 
 Suggested citation text:
 
-> GXL. *All-Route Terminal Half-Life Dataset*. Version 2026-10-26. Hugging Face Datasets. SHA-256 `8b2bc282bcc623af3b14e71c642cfd0189df49552634f3a34167c827c6b475f9`.
+> GXL. *All-Route Terminal Half-Life Dataset*. Version 2026-10-26.2. Hugging Face Datasets. SHA-256 `89584232b5fbb52bf08a14c3c8fecabc818646b33e5fc7600a8447778ae21a90`.
 
 ## Versioning
 
-This card documents the 2026-10-26 release. Relative to the 2026-10-25 release, it adds 24 source-supported records, removes 17 range-endpoint records, and makes no in-place changes to retained row IDs. The current release contains no `range_endpoint` records. See [`CHANGELOG.md`](CHANGELOG.md) and the dated audit artifacts under [`audits/`](audits/) for details.
+This card documents release 2026-10-26.2. Relative to release 2026-10-26.1, it adds the fully populated `molecule_class` column while preserving all 19,952 row IDs and every existing field value. See [`CHANGELOG.md`](CHANGELOG.md) and the dated audit artifacts under [`audits/`](audits/) for details.
 
 Future releases should preserve stable `row_id` values for unchanged observations, publish a new file checksum, and describe additions, removals, or field-level revisions in the repository history.
 
@@ -175,5 +198,6 @@ README.md                                Dataset card and usage documentation
 CHANGELOG.md                             Release history
 data/all_route_half_life_release.csv     Canonical dataset file
 metadata/release_manifest.json           Machine-readable release metadata
-audits/2026-10-26/                       Review evidence for this release
+audits/2026-10-26/                       Range-endpoint review evidence
+audits/2026-10-26-molecule-class/        Molecule-class validation evidence
 ```

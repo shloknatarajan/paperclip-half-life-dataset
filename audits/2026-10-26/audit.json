@@ -1,0 +1,23 @@
+{
+  "source_csv": "upstream/20261026_001214_range_endpoint_source_recovery/all_route_half_life_release.csv",
+  "source_sha256": "cfa0f2ff8f5c432d4af385698e0405db098d3f08492212805295f6a8906e6d4c",
+  "output_csv": "data/all_route_half_life_release.csv",
+  "output_sha256": "8b2bc282bcc623af3b14e71c642cfd0189df49552634f3a34167c827c6b475f9",
+  "input_rows": 19954,
+  "rows_removed": 2,
+  "removed_row_ids": [
+    "ivhl_df039c5df8410bdd8d06cbe9",
+    "ivhl_457335e5ca78b23c80667afb"
+  ],
+  "output_rows": 19952,
+  "columns": 13,
+  "unique_row_ids": true,
+  "remaining_range_endpoint_rows": 0,
+  "blank_required_fields": {
+    "terminal_half_life": 0,
+    "reported_half_life": 0,
+    "summary_statistic": 0
+  },
+  "artifact_tool_table_inspection": "{\"kind\":\"table\",\"sheet\":\"Release\",\"address\":\"A1:M6\",\"rows\":6,\"cols\":13,\"values\":[[\"row_id\",\"pmcid\",\"drug_name\",\"normalized_drug_name\",\"smiles\",\"inchikey\",\"administration_route\",\"terminal_half_life\",\"reported_half_life\",\"summary_statistic\",\"drug_information\",\"cohort_information\",\"notes\"],[\"ivhl_7d54b5ea044d9a2b5ff50844\",\"PMC10011608\",\"bevacizumab\",\"bevacizumab\",\"\",\"\",\"iv\",\"390\",\"390 h (CV 17.2%)\",\"mean\",\"MB02-SP (MB02 bevacizumab biosimilar manufactured by the Standard Process), s...\",\"37 healthy male volunteers randomized to the MB02-SP arm (PK population, n = ...\",\"Value from Table 2, 'Summary of serum PK parameters of bevacizumab'; dispersi...\"],[\"ivhl_6b97974357200de5a2c1c594\",\"PMC10011608\",\"bevacizumab\",\"bevacizumab\",\"\",\"\",\"iv\",\"393\",\"393 h (CV 11.1%)\",\"mean\",\"MB02-DM (MB02 bevacizumab biosimilar manufactured by the optimized Defined Me...\",\"39 healthy male volunteers randomized to the MB02-DM arm (PK population, n = ...\",\"Value from Table 2, 'Summary of serum PK parameters of bevacizumab'; dispersi...\"],[\"ivhl_4eaf2fb215d5400f26c4b289\",\"PMC10011608\",\"bevacizumab\",\"bevacizumab\",\"\",\"\",\"iv\",\"396\",\"396 h (CV 14.4%)\",\"mean\",\"US-bevacizumab (US-licensed reference bevacizumab), single 1 mg/kg dose admin...\",\"38 healthy male volunteers randomized to the US-bevacizumab arm (PK populatio...\",\"Value from Table 2, 'Summary of serum PK parameters of bevacizumab'; dispersi...\"],[\"ivhl_ac8b0ceca1cbf2d5a2ce4dce\",\"PMC10014690\",\"JNJ‐63709178\",\"JNJ‐63709178\",\"\",\"\",\"iv\",\"39.6\",\"averaged 39.6 (range: 23.8–46.5) h\",\"mean\",\"JNJ‐63709178, a humanized IgG4-PAA bispecific antibody targeting CD123 and CD...\",\"Adult patients with relapsed or refractory acute myeloid leukemia who were in...\",\"Authors explicitly label the estimate as 'terminal elimination half-life.' Po...\"],[\"ivhl_fe2504f0d6a9cb6d2e1d7ea0\",\"PMC10019156\",\"COVID-HIGIV (SARS-CoV-2 S-protein binding IgG antibody)\",\"COVID-HIGIV (SARS-CoV-2 S-protein binding IgG antibody)\",\"\",\"\",\"iv\",\"583.13\",\"583.13 (237.39) h [Mean (SD)]; Median 521.45 h; Min, Max 344.7, 921.7; Geo. M...\",\"mean\",\"Anti-SARS-CoV-2 immunoglobulin intravenous (human) investigational product (C...\",\"Healthy adult volunteers (phase 1, single-center, randomized, double-blind, p...\",\"Value from Table 2 (SARS-CoV-2 S-protein binding IgG antibody PK parameters, ...\"]],\"valuesTruncated\":true,\"valuesPreviewRows\":6,\"valuesPreviewCols\":13,\"valuesPreviewAddress\":\"A1:M6\"}",
+  "artifact_tool_formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+}

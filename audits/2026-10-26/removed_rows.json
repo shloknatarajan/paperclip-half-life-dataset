@@ -1,0 +1,32 @@
+[
+  {
+    "row_id": "ivhl_df039c5df8410bdd8d06cbe9",
+    "pmcid": "PMC10019422",
+    "drug_name": "PC (phosphatidylcholine)",
+    "normalized_drug_name": "",
+    "smiles": "",
+    "inchikey": "",
+    "administration_route": "iv",
+    "terminal_half_life": "2.8",
+    "reported_half_life": "PC t½ ranged: 3.4 g 1-week last infusion: 2.8 h",
+    "summary_statistic": "range_endpoint",
+    "drug_information": "CSL112 (reconstituted apoA-I [human] with phosphatidylcholine, sucrose-stabilized; lyophilized, dissolved in sterile water for injection), intravenous infusion (2-h infusion per review) of 3.4 g once weekly in the Phase 1 multiple-ascending-dose study (Gille et al. [30], NCT01281774). This row corresponds to the last infusion of the 3.4 g once-weekly regimen. Measured analyte: plasma phosphatidylcholine.",
+    "cohort_information": "Phase 1 multiple-ascending-dose (MAD), double-blind (described elsewhere as adaptive, unblinded), placebo-controlled randomized study in 36 healthy volunteers randomized 3:1 to CSL112 or placebo across regimens (3.4 g once weekly, 6.8 g once weekly, 3.4 g twice weekly). Early CSL112 Phase 1 trials were performed mostly in White males (97.2%). This row corresponds to the 3.4 g once-weekly arm.",
+    "notes": "Reported as part of a t½ range statement; specific scalar explicitly tied to the 3.4 g 1-week last infusion.\nHalf-life note: Table 1 footnote/abbreviation list defines \"t1/2 terminal elimination half-life\""
+  },
+  {
+    "row_id": "ivhl_457335e5ca78b23c80667afb",
+    "pmcid": "PMC10019422",
+    "drug_name": "PC (phosphatidylcholine)",
+    "normalized_drug_name": "",
+    "smiles": "",
+    "inchikey": "",
+    "administration_route": "iv",
+    "terminal_half_life": "81.5",
+    "reported_half_life": "PC t½ ranged: ... 6.8 g 1-week 1st infusion: 81.5 h",
+    "summary_statistic": "range_endpoint",
+    "drug_information": "CSL112 (reconstituted apoA-I [human] with phosphatidylcholine, sucrose-stabilized; lyophilized, reconstituted in sterile water for injection), intravenous infusion (2 h) of 6.8 g once weekly in the Phase 1 multiple-ascending-dose study (Gille et al. [30], NCT01281774). This row corresponds to the first infusion of the 6.8 g once-weekly regimen. Measured analyte: plasma phosphatidylcholine.",
+    "cohort_information": "Phase 1 multiple-ascending-dose study in 36 healthy volunteers randomized 3:1 to CSL112 or placebo (regimens: 3.4 g once weekly, 6.8 g once weekly, 3.4 g twice weekly). Early CSL112 Phase 1 trials were performed mostly in White males (97.2%). This row corresponds to the 6.8 g once-weekly arm.",
+    "notes": "Reported as part of a t½ range statement; scalar explicitly tied to the 6.8 g 1-week first infusion.\nHalf-life note: Table 1 footnote/abbreviation list defines \"t1/2 terminal elimination half-life\""
+  }
+]

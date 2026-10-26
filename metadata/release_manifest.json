@@ -1,0 +1,44 @@
+{
+  "release_date": "2026-10-26",
+  "release_csv": "data/all_route_half_life_release.csv",
+  "csv_sha256": "8b2bc282bcc623af3b14e71c642cfd0189df49552634f3a34167c827c6b475f9",
+  "rows": 19952,
+  "columns": 13,
+  "distinct_pmcids": 3270,
+  "unique_row_ids": true,
+  "route_counts": {
+    "oral": 10002,
+    "iv": 7705,
+    "subcutaneous": 820,
+    "other": 1425
+  },
+  "missing_value_counts": {
+    "normalized_drug_name": 3078,
+    "smiles": 7518,
+    "inchikey": 7518
+  },
+  "summary_statistic_counts": {
+    "mean": 11051,
+    "arithmetic_mean": 940,
+    "geometric_mean": 4890,
+    "harmonic_mean": 360,
+    "median": 1469,
+    "individual_value": 791,
+    "model_estimate": 83,
+    "pooled_estimate": 35,
+    "typical_value": 16,
+    "unspecified": 317
+  },
+  "previous_release": {
+    "release_date": "2026-10-25",
+    "csv_sha256": "90940ad9edb449807dfca4a860cbe4eb08a42acf88afcc0e1a5ec02456970701",
+    "rows": 19945,
+    "rows_added": 24,
+    "rows_removed": 17,
+    "retained_rows_modified": 0
+  },
+  "remaining_range_endpoint_rows": 0,
+  "hugging_face_dataset_card_parse": "passed",
+  "license_metadata": "intentionally_omitted_pending_maintainer_decision",
+  "hugging_face_repository": "gxl-ai/paperclip-half-life"
+}
